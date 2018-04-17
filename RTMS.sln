@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTMS_API", "RTMS_API\RTMS_API.csproj", "{30C96AF3-32C4-4856-9351-EA73D1038C50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTMS_API.Tests", "RTMS_API.Tests\RTMS_API.Tests.csproj", "{4A08A0FD-6634-4B40-A4E5-C2EA26B7E6C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30C96AF3-32C4-4856-9351-EA73D1038C50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30C96AF3-32C4-4856-9351-EA73D1038C50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30C96AF3-32C4-4856-9351-EA73D1038C50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30C96AF3-32C4-4856-9351-EA73D1038C50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A08A0FD-6634-4B40-A4E5-C2EA26B7E6C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A08A0FD-6634-4B40-A4E5-C2EA26B7E6C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A08A0FD-6634-4B40-A4E5-C2EA26B7E6C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A08A0FD-6634-4B40-A4E5-C2EA26B7E6C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57E38BC6-A776-43C9-99EF-773A22AAFB9A}
+	EndGlobalSection
+EndGlobal
