@@ -15,26 +15,26 @@ using RTMS_API;
 
 namespace RTMS_API.Controllers
 {
-    public class SensorCodesController : ODataController
+    public class WifiActivitiesController : ODataController
     {
         private OData_RTMSEntities db = new OData_RTMSEntities();
 
-        // GET: /SensorCodes
+        // GET: /WifiActivities
         [EnableQuery]
-        public IQueryable<SensorCode> GetSensorCodes()
+        public IQueryable<WifiActivity> GetWifiActivities()
         {
-            return db.SensorCodes;
+            return db.WifiActivities;
         }
 
-        // GET: /SensorCodes(5)
+        // GET: /WifiActivities(5)
         [EnableQuery]
-        public SingleResult<SensorCode> GetSensorCode([FromODataUri] double key)
+        public SingleResult<WifiActivity> GetWifiActivity([FromODataUri] double key)
         {
-            return SingleResult.Create(db.SensorCodes.Where(sensorCode => sensorCode.id == key));
+            return SingleResult.Create(db.WifiActivities.Where(wifiActivity => wifiActivity.id == key));
         }
 
-        // PUT: /SensorCodes(5)
-        public async Task<IHttpActionResult> Put([FromODataUri] double key, Delta<SensorCode> patch)
+        // PUT: /WifiActivities(5)
+        public async Task<IHttpActionResult> Put([FromODataUri] double key, Delta<WifiActivity> patch)
         {
             Validate(patch.GetEntity());
 
@@ -43,13 +43,13 @@ namespace RTMS_API.Controllers
                 return BadRequest(ModelState);
             }
 
-            SensorCode sensorCode = await db.SensorCodes.FindAsync(key);
-            if (sensorCode == null)
+            WifiActivity wifiActivity = await db.WifiActivities.FindAsync(key);
+            if (wifiActivity == null)
             {
                 return NotFound();
             }
 
-            patch.Put(sensorCode);
+            patch.Put(wifiActivity);
 
             try
             {
@@ -57,7 +57,7 @@ namespace RTMS_API.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SensorCodeExists(key))
+                if (!WifiActivityExists(key))
                 {
                     return NotFound();
                 }
@@ -67,18 +67,18 @@ namespace RTMS_API.Controllers
                 }
             }
 
-            return Updated(sensorCode);
+            return Updated(wifiActivity);
         }
 
-        // POST: /SensorCodes
-        public async Task<IHttpActionResult> Post(SensorCode sensorCode)
+        // POST: /WifiActivities
+        public async Task<IHttpActionResult> Post(WifiActivity wifiActivity)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.SensorCodes.Add(sensorCode);
+            db.WifiActivities.Add(wifiActivity);
 
             try
             {
@@ -86,7 +86,7 @@ namespace RTMS_API.Controllers
             }
             catch (DbUpdateException)
             {
-                if (SensorCodeExists(sensorCode.id))
+                if (WifiActivityExists(wifiActivity.id))
                 {
                     return Conflict();
                 }
@@ -96,12 +96,12 @@ namespace RTMS_API.Controllers
                 }
             }
 
-            return Created(sensorCode);
+            return Created(wifiActivity);
         }
 
-        // PATCH: /SensorCodes(5)
+        // PATCH: /WifiActivities(5)
         [AcceptVerbs("PATCH", "MERGE")]
-        public async Task<IHttpActionResult> Patch([FromODataUri] double key, Delta<SensorCode> patch)
+        public async Task<IHttpActionResult> Patch([FromODataUri] double key, Delta<WifiActivity> patch)
         {
             Validate(patch.GetEntity());
 
@@ -110,13 +110,13 @@ namespace RTMS_API.Controllers
                 return BadRequest(ModelState);
             }
 
-            SensorCode sensorCode = await db.SensorCodes.FindAsync(key);
-            if (sensorCode == null)
+            WifiActivity wifiActivity = await db.WifiActivities.FindAsync(key);
+            if (wifiActivity == null)
             {
                 return NotFound();
             }
 
-            patch.Patch(sensorCode);
+            patch.Patch(wifiActivity);
 
             try
             {
@@ -124,7 +124,7 @@ namespace RTMS_API.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SensorCodeExists(key))
+                if (!WifiActivityExists(key))
                 {
                     return NotFound();
                 }
@@ -134,19 +134,19 @@ namespace RTMS_API.Controllers
                 }
             }
 
-            return Updated(sensorCode);
+            return Updated(wifiActivity);
         }
 
-        // DELETE: /SensorCodes(5)
+        // DELETE: /WifiActivities(5)
         public async Task<IHttpActionResult> Delete([FromODataUri] double key)
         {
-            SensorCode sensorCode = await db.SensorCodes.FindAsync(key);
-            if (sensorCode == null)
+            WifiActivity wifiActivity = await db.WifiActivities.FindAsync(key);
+            if (wifiActivity == null)
             {
                 return NotFound();
             }
 
-            db.SensorCodes.Remove(sensorCode);
+            db.WifiActivities.Remove(wifiActivity);
             await db.SaveChangesAsync();
 
             return StatusCode(HttpStatusCode.NoContent);
@@ -161,9 +161,9 @@ namespace RTMS_API.Controllers
             base.Dispose(disposing);
         }
 
-        private bool SensorCodeExists(double key)
+        private bool WifiActivityExists(double key)
         {
-            return db.SensorCodes.Count(e => e.id == key) > 0;
+            return db.WifiActivities.Count(e => e.id == key) > 0;
         }
     }
 }

@@ -16,6 +16,8 @@ namespace RTMS_API
 
             ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
             builder.EntitySet<SensorCode>("SensorCodes");
+            builder.EntitySet<TempReading>("TempReadings");
+            builder.EntitySet<WifiActivity>("WifiActivities");
             config.Routes.MapODataServiceRoute("odata", null, builder.GetEdmModel());
         }
     }

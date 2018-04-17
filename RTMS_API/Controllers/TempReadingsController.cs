@@ -15,26 +15,26 @@ using RTMS_API;
 
 namespace RTMS_API.Controllers
 {
-    public class SensorCodesController : ODataController
+    public class TempReadingsController : ODataController
     {
         private OData_RTMSEntities db = new OData_RTMSEntities();
 
-        // GET: /SensorCodes
+        // GET: /TempReadings
         [EnableQuery]
-        public IQueryable<SensorCode> GetSensorCodes()
+        public IQueryable<TempReading> GetTempReadings()
         {
-            return db.SensorCodes;
+            return db.TempReadings;
         }
 
-        // GET: /SensorCodes(5)
+        // GET: /TempReadings(5)
         [EnableQuery]
-        public SingleResult<SensorCode> GetSensorCode([FromODataUri] double key)
+        public SingleResult<TempReading> GetTempReading([FromODataUri] double key)
         {
-            return SingleResult.Create(db.SensorCodes.Where(sensorCode => sensorCode.id == key));
+            return SingleResult.Create(db.TempReadings.Where(tempReading => tempReading.id == key));
         }
 
-        // PUT: /SensorCodes(5)
-        public async Task<IHttpActionResult> Put([FromODataUri] double key, Delta<SensorCode> patch)
+        // PUT: /TempReadings(5)
+        public async Task<IHttpActionResult> Put([FromODataUri] double key, Delta<TempReading> patch)
         {
             Validate(patch.GetEntity());
 
@@ -43,13 +43,13 @@ namespace RTMS_API.Controllers
                 return BadRequest(ModelState);
             }
 
-            SensorCode sensorCode = await db.SensorCodes.FindAsync(key);
-            if (sensorCode == null)
+            TempReading tempReading = await db.TempReadings.FindAsync(key);
+            if (tempReading == null)
             {
                 return NotFound();
             }
 
-            patch.Put(sensorCode);
+            patch.Put(tempReading);
 
             try
             {
@@ -57,7 +57,7 @@ namespace RTMS_API.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SensorCodeExists(key))
+                if (!TempReadingExists(key))
                 {
                     return NotFound();
                 }
@@ -67,18 +67,18 @@ namespace RTMS_API.Controllers
                 }
             }
 
-            return Updated(sensorCode);
+            return Updated(tempReading);
         }
 
-        // POST: /SensorCodes
-        public async Task<IHttpActionResult> Post(SensorCode sensorCode)
+        // POST: /TempReadings
+        public async Task<IHttpActionResult> Post(TempReading tempReading)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.SensorCodes.Add(sensorCode);
+            db.TempReadings.Add(tempReading);
 
             try
             {
@@ -86,7 +86,7 @@ namespace RTMS_API.Controllers
             }
             catch (DbUpdateException)
             {
-                if (SensorCodeExists(sensorCode.id))
+                if (TempReadingExists(tempReading.id))
                 {
                     return Conflict();
                 }
@@ -96,12 +96,12 @@ namespace RTMS_API.Controllers
                 }
             }
 
-            return Created(sensorCode);
+            return Created(tempReading);
         }
 
-        // PATCH: /SensorCodes(5)
+        // PATCH: /TempReadings(5)
         [AcceptVerbs("PATCH", "MERGE")]
-        public async Task<IHttpActionResult> Patch([FromODataUri] double key, Delta<SensorCode> patch)
+        public async Task<IHttpActionResult> Patch([FromODataUri] double key, Delta<TempReading> patch)
         {
             Validate(patch.GetEntity());
 
@@ -110,13 +110,13 @@ namespace RTMS_API.Controllers
                 return BadRequest(ModelState);
             }
 
-            SensorCode sensorCode = await db.SensorCodes.FindAsync(key);
-            if (sensorCode == null)
+            TempReading tempReading = await db.TempReadings.FindAsync(key);
+            if (tempReading == null)
             {
                 return NotFound();
             }
 
-            patch.Patch(sensorCode);
+            patch.Patch(tempReading);
 
             try
             {
@@ -124,7 +124,7 @@ namespace RTMS_API.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SensorCodeExists(key))
+                if (!TempReadingExists(key))
                 {
                     return NotFound();
                 }
@@ -134,19 +134,19 @@ namespace RTMS_API.Controllers
                 }
             }
 
-            return Updated(sensorCode);
+            return Updated(tempReading);
         }
 
-        // DELETE: /SensorCodes(5)
+        // DELETE: /TempReadings(5)
         public async Task<IHttpActionResult> Delete([FromODataUri] double key)
         {
-            SensorCode sensorCode = await db.SensorCodes.FindAsync(key);
-            if (sensorCode == null)
+            TempReading tempReading = await db.TempReadings.FindAsync(key);
+            if (tempReading == null)
             {
                 return NotFound();
             }
 
-            db.SensorCodes.Remove(sensorCode);
+            db.TempReadings.Remove(tempReading);
             await db.SaveChangesAsync();
 
             return StatusCode(HttpStatusCode.NoContent);
@@ -161,9 +161,9 @@ namespace RTMS_API.Controllers
             base.Dispose(disposing);
         }
 
-        private bool SensorCodeExists(double key)
+        private bool TempReadingExists(double key)
         {
-            return db.SensorCodes.Count(e => e.id == key) > 0;
+            return db.TempReadings.Count(e => e.id == key) > 0;
         }
     }
 }
