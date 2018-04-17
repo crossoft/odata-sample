@@ -198,6 +198,7 @@
     <Content Include="RTMSModel.edmx.diagram">
       <DependentUpon>RTMSModel.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
