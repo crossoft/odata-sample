@@ -14,7 +14,7 @@ namespace RTMS_API
     
     public partial class WifiActivity
     {
-        public double id { get; set; }
+        public int id { get; set; }
         public string mac { get; set; }
         public Nullable<double> connect { get; set; }
         public Nullable<System.DateTime> eventTime { get; set; }

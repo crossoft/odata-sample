@@ -14,7 +14,7 @@ namespace RTMS_API
     
     public partial class SensorCode
     {
-        public double id { get; set; }
+        public int id { get; set; }
         public Nullable<double> code { get; set; }
         public Nullable<System.DateTime> occurred { get; set; }
         public string notes { get; set; }

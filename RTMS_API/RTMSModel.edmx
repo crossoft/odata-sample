@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="float" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
           <Property Name="code" Type="float" />
           <Property Name="occurred" Type="datetime" />
           <Property Name="notes" Type="nvarchar" MaxLength="255" />
@@ -18,7 +18,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="float" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
           <Property Name="node" Type="nvarchar" MaxLength="255" />
           <Property Name="tempValue" Type="float" />
           <Property Name="dateAdded" Type="datetime" />
@@ -27,7 +27,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="float" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
           <Property Name="mac" Type="nvarchar" MaxLength="255" />
           <Property Name="connect" Type="float" />
           <Property Name="eventTime" Type="datetime" />
@@ -51,7 +51,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Double" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="code" Type="Double" />
           <Property Name="occurred" Type="DateTime" Precision="3" />
           <Property Name="notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
@@ -60,7 +60,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Double" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="node" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="tempValue" Type="Double" />
           <Property Name="dateAdded" Type="DateTime" Precision="3" />
@@ -69,7 +69,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Double" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="mac" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="connect" Type="Double" />
           <Property Name="eventTime" Type="DateTime" Precision="3" />

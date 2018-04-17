@@ -14,7 +14,7 @@ namespace RTMS_API
     
     public partial class TempReading
     {
-        public double id { get; set; }
+        public int id { get; set; }
         public string node { get; set; }
         public Nullable<double> tempValue { get; set; }
         public Nullable<System.DateTime> dateAdded { get; set; }
