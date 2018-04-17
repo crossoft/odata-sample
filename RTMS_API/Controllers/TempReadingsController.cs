@@ -20,7 +20,7 @@ namespace RTMS_API.Controllers
         private OData_RTMSEntities db = new OData_RTMSEntities();
 
         // GET: /TempReadings
-        [EnableQuery]
+        [EnableQuery(PageSize = 100)]
         public IQueryable<TempReading> GetTempReadings()
         {
             return db.TempReadings;
