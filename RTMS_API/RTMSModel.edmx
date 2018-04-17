@@ -10,7 +10,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="code" Type="float" />
+          <Property Name="code" Type="int" />
           <Property Name="occurred" Type="datetime" />
           <Property Name="notes" Type="nvarchar" MaxLength="255" />
         </EntityType>
@@ -52,7 +52,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="code" Type="Double" />
+          <Property Name="code" Type="Int32" />
           <Property Name="occurred" Type="DateTime" Precision="3" />
           <Property Name="notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
