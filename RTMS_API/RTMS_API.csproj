@@ -76,6 +76,8 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -127,6 +129,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="RTMSModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RTMSModel.edmx</DependentUpon>
+      <LastGenOutput>RTMSModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RTMSModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RTMSModel.edmx</DependentUpon>
+      <LastGenOutput>RTMSModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -137,10 +149,41 @@
     </Compile>
     <Compile Include="Models\ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RTMSModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RTMSModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RTMSModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RTMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RTMSModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RTMSModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SensorCode.cs">
+      <DependentUpon>RTMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempReading.cs">
+      <DependentUpon>RTMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WifiActivity.cs">
+      <DependentUpon>RTMSModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <EntityDeploy Include="RTMSModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RTMSModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="RTMSModel.edmx.diagram">
+      <DependentUpon>RTMSModel.edmx</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -151,6 +194,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
