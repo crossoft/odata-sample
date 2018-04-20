@@ -13,6 +13,8 @@ using System.Web.Http.OData;
 using System.Web.Http.OData.Routing;
 using RTMS_API;
 
+// https://blogs.msdn.microsoft.com/odatateam/2010/07/21/odata-and-authentication-part-6-custom-basic-authentication/
+
 namespace RTMS_API.Controllers
 {
     public class SensorCodesController : ODataController

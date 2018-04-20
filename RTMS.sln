@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTMS_API", "RTMS_API\RTMS_A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTMS_API.Tests", "RTMS_API.Tests\RTMS_API.Tests.csproj", "{4A08A0FD-6634-4B40-A4E5-C2EA26B7E6C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTMS_Client", "RTMS_Client\RTMS_Client.csproj", "{FAEE6F0E-BBC3-48FE-94E6-15C25002DA6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTMS_Client.Tests", "RTMS_Client.Tests\RTMS_Client.Tests.csproj", "{A7512BBD-E76F-4911-80BC-870BB6AAE758}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{4A08A0FD-6634-4B40-A4E5-C2EA26B7E6C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A08A0FD-6634-4B40-A4E5-C2EA26B7E6C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A08A0FD-6634-4B40-A4E5-C2EA26B7E6C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAEE6F0E-BBC3-48FE-94E6-15C25002DA6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAEE6F0E-BBC3-48FE-94E6-15C25002DA6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAEE6F0E-BBC3-48FE-94E6-15C25002DA6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAEE6F0E-BBC3-48FE-94E6-15C25002DA6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7512BBD-E76F-4911-80BC-870BB6AAE758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7512BBD-E76F-4911-80BC-870BB6AAE758}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7512BBD-E76F-4911-80BC-870BB6AAE758}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7512BBD-E76F-4911-80BC-870BB6AAE758}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
